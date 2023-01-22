@@ -58,7 +58,7 @@ export async function appRoutes (app : FastifyInstance){
       }
     })
 
-    const day = await prisma.day.findMany({
+    const day = await prisma.day.findUnique({
       where: {
         date: parsedDate.toDate(),
       },
